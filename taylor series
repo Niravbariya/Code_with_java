@@ -1,0 +1,61 @@
+taylor series
+
+ e^x = 1 + x /1! + x^2 / 2! + x^3 /3! + x^4/4! + ..+ x^n/n!
+
+
+double taylorSeries(int x,int n)
+{
+    if(n == 0)
+ 	return 1;
+    else
+        return (power(x,n)/factorial(n)) + taylor();
+}
+
+
+code:-
+ 
+import java.util.*;
+public class Main
+{
+    
+   static double power(int x, int n) {
+      if(n == 0)
+           return 1;
+       else if(n == 1)
+           return x;
+      else 
+           return x*power(x,n-1);
+    }
+
+    static double factorial(int n)
+   {
+       if(n==0 || n==1)
+        return 1; 
+     else 
+          return n*factorial(n-1);
+   }
+   static double taylorSeries(int x,int n)
+   {
+    if(n == 0)
+ 	   return 1;
+    else
+        return (power(x,n)/factorial(n)) + taylorSeries(x, n -1);
+    }
+
+   
+	public static void main(String[] args) {
+	    Scanner ip = new Scanner(System.in);
+	    int x = ip.nextInt();
+	    int n = ip.nextInt();
+	    double result = taylorSeries( x,n);
+	    System.out.print("Taylor series: "+result);
+	    
+	    
+	    
+	}
+}
+
+
+x = 3
+n = 5
+18.4
