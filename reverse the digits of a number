@@ -1,0 +1,42 @@
+reverse the digits of a number(2way)
+rev = 0;
+          rev = (rev*10)+(num%10);
+	  num/10;
+
+
+          rev= (0*10)+8 = 8
+  	  num = num /10;  // 67
+     
+          rev = (8*10)+7 = 87
+	  num=num/10; 
+		
+	  rev = (87*10)+6 = 876
+	  num=num/10; 
+
+
+
+import java.util.*;
+public class Main
+{
+    static  int rev = 0;
+
+    static int reverse(int num)
+    {  
+        if(num == 0)
+        {
+            return rev;
+        }
+        else{
+            rev = (rev*10) + (num%10);
+            return reverse(num/10);
+            
+        }
+    }
+   
+	public static void main(String[] args) {
+	    Scanner ip = new Scanner(System.in);
+	    int n = ip.nextInt();
+	    int result =  reverse(n);
+	    System.out.print("reversed digits: "+result);
+	  }
+}
