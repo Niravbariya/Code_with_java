@@ -1,0 +1,50 @@
+//find max summation among the rows and its index.
+import java.util.*;
+public class Main
+{
+   public static int maxSum(int[][] matrix, int nRows, int nCols) {
+         
+   int rowSum ,max = 0;
+   int index = -1;
+   
+   for(int rows = 0 ; rows < nRows ; rows++)
+   { 
+      rowSum = 0;
+      for(int cols = 0; cols < nCols; cols++)
+      {
+       rowSum += matrix[rows][cols];
+      }
+       if(rowSum>= max) 
+       {
+            
+            max = rowSum;
+            index = rows;
+       }
+     
+         
+       }  
+        if(max == 0)
+         return -1;
+       else
+         return index;
+         
+   }
+    
+	public static void main(String[] args) {
+	Scanner ip = new Scanner(System.in);
+	int nRows = ip.nextInt();
+	int nCols = ip.nextInt();
+	
+	int[][] matrix = new int[nRows][nCols];
+	for(int rows = 0 ; rows < nRows; rows++)
+	{
+	    for(int cols = 0 ; cols < nCols ; cols++)
+	    {
+	        matrix[rows][cols] = ip.nextInt();
+	    }
+	}
+	int result = maxSum(matrix, nRows,nCols);
+	System.out.println("max sum among rows is "+result);
+
+	}
+}
