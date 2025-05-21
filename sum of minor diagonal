@@ -1,0 +1,60 @@
+//sum of minor diagonal 
+import java.util.*;
+public class Main
+{
+    
+    
+    public static void displayDiagoanl(int[][] matrix,int n)
+    {
+        
+       //Brute force - way1 
+       for(int row = 0; row < n;row++)
+       {
+           for(int col = 0 ;col < n;col++)
+           {
+               if(row + col == n-1)
+                  System.out.println(matrix[row][col]+" ");
+           }
+       }
+       //optimised - way2
+    //   for(int ind = 0 ; ind < n ; ind++)
+    //   {
+    //       System.out.print(matrix[ind][n-ind-1]+" ");
+    //   }
+       
+       
+     
+    }
+     public static int sumOfMinorDiagonal(int[][] matrix)
+    {
+        int sum = 0;
+        int n = matrix.length;
+        for(int ind = 0 ; ind <n;ind++){
+            sum = sum + matrix[ind][n-ind-1];
+        }
+        return sum;
+    }
+ 
+    
+	public static void main(String[] args) {
+	Scanner ip = new Scanner(System.in);
+	int nRows = ip.nextInt();
+	int nCols = ip.nextInt();
+	
+	int[][] matrix = new int[nRows][nCols];
+	for(int rows = 0 ; rows < nRows; rows++)
+	{
+	    for(int cols = 0 ; cols < nCols ; cols++)
+	    {
+	        matrix[rows][cols] = ip.nextInt();
+	    }
+	}
+	
+	int n = matrix.length;
+	System.out.println("The minor diagonal is:");
+    displayDiagoanl(matrix, n);
+    int result = sumOfMinorDiagonal(matrix);
+    System.out.println("The minor diagonal sum is:"+result);
+
+	}
+}
