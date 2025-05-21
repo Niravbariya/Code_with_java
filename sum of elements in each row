@@ -1,0 +1,41 @@
+//sum of elements in each row
+
+import java.util.*;
+public class Main
+{
+ public static  void sumOfEleRows(int[][] matrix,int nRows, int nCols)
+  {
+   int rowSum ;
+   
+   for(int rows = 0 ; rows < nRows ; rows++)
+   { 
+      rowSum = 0;
+      for(int cols = 0; cols < nCols; cols++)
+      {
+       rowSum += matrix[rows][cols];
+      }
+     System.out.println("sum of Row "+(rows+1)+" is "+rowSum);
+
+    }
+  
+  }
+    
+ 
+    
+	public static void main(String[] args) {
+	Scanner ip = new Scanner(System.in);
+	int nRows = ip.nextInt();
+	int nCols = ip.nextInt();
+	
+	int[][] matrix = new int[nRows][nCols];
+	for(int rows = 0 ; rows < nRows; rows++)
+	{
+	    for(int cols = 0 ; cols < nCols ; cols++)
+	    {
+	        matrix[rows][cols] = ip.nextInt();
+	    }
+	}
+	sumOfEleRows( matrix,nRows,nCols);
+
+	}
+}
