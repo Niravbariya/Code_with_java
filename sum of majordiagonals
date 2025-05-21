@@ -1,0 +1,60 @@
+sum of majordiagonals
+import java.util.*;
+public class Main
+{
+    
+    // sum of major diagonal
+    public static int sumOfMajorDiagonal(int[][] matrix)
+    {
+        int sum = 0;
+        for(int ind = 0 ; ind < matrix.length;ind++){
+            sum = sum + matrix[ind][ind];
+        }
+        return sum;
+    }
+    
+    //display
+    public static void DiagonalEle(int[][] matrix,int nRows,int nCols)
+    {
+        for(int rows = 0 ; rows < nRows; rows++)
+    	{
+	      for(int cols = 0 ; cols < nCols ; cols++)
+	      {
+	          if(rows == cols){
+	              System.out.print(matrix[rows][cols]+" ");
+	          }
+	      }
+     	}
+    }
+    //display 
+    public static void displayele(int[][] matrix){
+        for(int i = 0; i < matrix.length;i++)
+        {
+            System.out.println(matrix[i][i]+" ");
+        }
+    }
+    
+
+	public static void main(String[] args) {
+	Scanner ip = new Scanner(System.in);
+	int nRows = ip.nextInt();
+	int nCols = ip.nextInt();
+	
+	int[][] matrix = new int[nRows][nCols];
+	for(int rows = 0 ; rows < nRows; rows++)
+	{
+	    for(int cols = 0 ; cols < nCols ; cols++)
+	    {
+	        matrix[rows][cols] = ip.nextInt();
+	    }
+	}
+	
+	System.out.println("The major diagonal is:");
+// 	DiagonalEle(matrix,nRows, nCols);
+    displayele(matrix);
+	System.out.println();
+	int result = sumOfMajorDiagonal(matrix);
+	System.out.println("The major diagonal sum is "+result);
+	
+	}
+}
