@@ -1,0 +1,44 @@
+zig-zag printing
+import java.util.*;
+public class Main{
+    
+    public static void zigzagDisplay(int[][] matrix){
+     for(int row = 0; row < matrix.length;row++)
+     {
+         if(row%2 == 0)
+         {
+             for(int col = 0;col < matrix[0].length;col++)//left to right
+             {
+                 System.out.print(matrix[row][col]+" ");
+             }
+         }
+         else{
+             for(int col = matrix[0].length-1;col>= 0;col--)
+             {
+                 System.out.print(matrix[row][col]+" ");
+             }
+         }
+         System.out.println();
+     }
+         
+     
+
+    }
+	public static void main(String[] args) {
+	  Scanner ip = new Scanner(System.in);
+	  int nRows = ip.nextInt();
+	  int nCols = ip.nextInt();
+	
+    	int[][] matrix = new int[nRows][nCols];
+     	for(int rows = 0 ; rows < nRows; rows++)
+    	{
+	       for(int cols = 0 ; cols < nCols ; cols++)
+	      {
+	        matrix[rows][cols] = ip.nextInt();
+	      } 
+     	}
+     	System.out.println();
+     	zigzagDisplay(matrix);
+     	
+	}
+}
