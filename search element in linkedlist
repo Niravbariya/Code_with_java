@@ -1,0 +1,57 @@
+search element in linkedlist
+// lenght of linkedlist
+
+class Main {
+    public static class Node{
+        int data;
+        Node next;
+        
+        Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    //to find length of linkedlist
+    public static void findLength(Node head){
+        Node temp = head;
+        int size = 0;
+        while(temp != null){
+            temp = temp.next;
+            size++;
+        }
+        System.out.println(size);
+     }
+     //to search element inside linkedlist
+    public static boolean findElement(Node head,int key){
+        Node temp =  head;
+        while(temp != null){
+            if(temp.data == key){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        Node a = new Node(5);
+        Node b= new Node(6);
+        Node c= new Node(7);
+        Node d = new Node(8);
+        
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = null;
+        int key = 9;
+        
+        if(findElement(a,key)){
+            System.out.print(key+" found. ");
+        }
+        else{
+           System.out.print("not found.");
+
+        }
+
+        
+    }
+}
